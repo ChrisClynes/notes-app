@@ -1,0 +1,20 @@
+.app__tackBoard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    background-color: rgb(0, 255, 34);
+    
+}
+
+
+ .app__notes-container {
+    width: 90%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-wrap: wrap;
+    padding-top: 6rem;
+ } 

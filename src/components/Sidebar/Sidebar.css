@@ -1,0 +1,8 @@
+.app__sidebar {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 123, 0);
+}
