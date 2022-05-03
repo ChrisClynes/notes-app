@@ -5,9 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background: none;
     position: absolute;
     top: 0;
+    
+    z-index: 10;
+}
+
+.app__title {
     font-family: 'Baloo 2', cursive;
-    font-size: 3rem;
+    font-size: 5rem;
+    font-weight: 600;
 }

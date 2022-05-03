@@ -6,7 +6,7 @@ import './TackBoard.css';
 
 const TackBoard = () => {
     return (
-        <div className="app__tackBoard">
+        <div className="app__tackBoard app__bg">
             <div className="app__notes-container">
             <Notes />
             <Notes />

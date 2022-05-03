@@ -5,7 +5,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background-image: none;
     position: absolute;
+    text-align: center;
     bottom: 0;
+    z-index: 0;
+}
+
+.app__footer-text {
+    width: 250px;
+    height: 40px;
+    background-image: linear-gradient(rgb(82, 82, 82), rgb(94, 94, 94), rgb(82, 82, 82));
+    border-radius: 20px;
+    border: 2px solid rgb(37, 37, 37);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 2px 1px rgb(36, 36, 36);
+
+
 }
