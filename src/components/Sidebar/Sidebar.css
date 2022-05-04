@@ -1,32 +1,94 @@
 .app__sidebar_wrapper {
-    width: 100px;
+    width: 150px;
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     
 }
 
 .app__sidebar {
-    width: 100px;
+    min-width: 60px;
     height: 100%;
     display: flex;
+    float: left;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to right, rgba(58, 58, 58, 0.945) , rgba(141, 141, 141, 0.808));
     border-right: 3px solid rgba(12, 12, 12, 0.938);
 }
 
-.app__add_button {
+.app__add_button, .app__minus_button  {
     padding-left: 1rem;
     padding-right: 0.5rem;
+    cursor: pointer;
+}
+
+.app__color_picker-wrapper {
+    width: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .app__color_picker {
-    width: 100px;
-    height: 100%;
+    width: 30px;
+    height: 250px;
     display: flex;
-    background-color: aqua;
-    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(126, 126, 126, 0.925);
+    flex-direction: column;
+    border-right: 2px solid rgba(12, 12, 12, 0.938);
+    border-top: 2px solid rgba(12, 12, 12, 0.938);
+    border-bottom: 2px solid rgba(12, 12, 12, 0.938);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.colors {
+    margin: 0.5rem 0.25rem;
+    cursor: pointer;
+}
+
+.color1 {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: bisque;
+}
+
+.color2 {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.color3 {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: rgb(187, 255, 174);
+}
+.color4 {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: rgb(171, 126, 255);
+}
+
+.color5 {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: rgb(255, 132, 116);
+}
+
+@media screen and (max-width:650px) {
+    .app__sidebar_wrapper {
+        display: none;
+    }
 }

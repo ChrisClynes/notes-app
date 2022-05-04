@@ -4,19 +4,16 @@ import { Notes } from '../../container';
 
 import './TackBoard.css';
 
-const TackBoard = () => {
+const TackBoard = ({ notes }) => {
+
+
+
     return (
-        <div className="app__tackBoard app__bg">
+        <div className="app__tackBoard ">
             <div className="app__notes-container">
-            <Notes />
-            <Notes />
-            <Notes />
-            <Notes />
-            <Notes />
-            <Notes />
-            <Notes />
-            <Notes />
-            <Notes />
+                {notes.map((note) => (
+                    <Notes id={note.id} text={note.text} date={note.date} color={note.color}/> 
+                ))}
             </div>
         </div>
     )

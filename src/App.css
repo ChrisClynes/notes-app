@@ -19,7 +19,7 @@ body,html {
     height: 100vh;
     display: flex;
     flex-direction: row; 
-    background-color: rgb(255, 123, 0);
+    background-color: rgba(255, 255, 255, 0) ;
 }
 
 .app__bg {
@@ -29,3 +29,10 @@ body,html {
     background-repeat: repeat;
     background-attachment: fixed;
   }
+
+  /* @media screen and (max-width:650px) {
+    .app__main {
+        display: flex;
+        flex-direction: column;
+    }
+  } */
