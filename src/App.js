@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Header, Footer, Sidebar } from './components';
 import { TackBoard } from './container';
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 
 import './App.css';
 
 const App = () => {
     const [toggleAddNote, setToggleAddNote] = useState(false);
     const [notes, setNotes] = useState([{
+        id: nanoid(),
+        title: "",
         text: "add a new note...",
-        date: "Mar 2. 2022 10:40pm",
+        date: "",
         color: "#FFF"
     }]);
 
