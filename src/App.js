@@ -6,7 +6,8 @@ import { nanoid } from 'nanoid';
 import './App.css';
 
 const App = () => {
-    const [toggleAddNote, setToggleAddNote] = useState(false);
+    const [sidebarExpand, setSidebarExpand] = useState(false);
+    const [toggleNoteColor, setToggleNoteColor] = useState(false);
     const [notes, setNotes] = useState([{
         id: nanoid(),
         title: "",
@@ -19,8 +20,8 @@ const App = () => {
     <div className="app__page"> 
         <Header />
         <div className="app__main app__bg">
-            <Sidebar notes={notes} setNotes={setNotes} toggleAddNote={toggleAddNote} setToggleAddNote={setToggleAddNote}/>
-            <TackBoard notes={notes} setNotes={setNotes} toggleAddNote={toggleAddNote} setToggleAddNote={setToggleAddNote}/>
+            <Sidebar notes={notes} setNotes={setNotes} sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand}/>
+            <TackBoard notes={notes} setNotes={setNotes} sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} toggleNoteColor={setToggleNoteColor} setToggleNoteColor={setToggleNoteColor}/>
         </div>
         <Footer />
     </div>

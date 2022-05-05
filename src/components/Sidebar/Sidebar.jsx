@@ -5,11 +5,10 @@ import { HiMinusCircle, HiPlusCircle } from 'react-icons/hi';
 
 import './Sidebar.css';
 
-const Sidebar = ({ toggleAddNote, setToggleAddNote, notes, setNotes, title}) => {
+const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes, title}) => {
 
     const noteBtnHandler = () => {
-        setToggleAddNote(toggle => !toggle);
-        console.log(notes)
+        setSidebarExpand(toggle => !toggle);
     }
     const createNoteHandler = (color) => {
         const newNote = {
@@ -27,7 +26,7 @@ const Sidebar = ({ toggleAddNote, setToggleAddNote, notes, setNotes, title}) => 
     return (
         <div className="app__sidebar_wrapper">
             <div className="app__sidebar">
-            {!toggleAddNote && (
+            {!sidebarExpand && (
                 <div className="app__add_button">
                     <HiPlusCircle size={48} onClick={(e) => {
                         e.stopPropagation() 
@@ -35,7 +34,7 @@ const Sidebar = ({ toggleAddNote, setToggleAddNote, notes, setNotes, title}) => 
                         }}/>
                 </div>
             )}
-            {toggleAddNote && (
+            {sidebarExpand && (
                 <div className="app__minus_button">
                     <HiMinusCircle size={48} onClick={(e) => {
                         e.stopPropagation() 
@@ -44,7 +43,7 @@ const Sidebar = ({ toggleAddNote, setToggleAddNote, notes, setNotes, title}) => 
                 </div>
             )}
             </div>
-            {toggleAddNote && (
+            {sidebarExpand && (
                 <div className="app__color_picker-wrapper"> 
                     <div className="app__color_picker">
                         <button type="button" className="colors color1" onClick={() => {createNoteHandler("bisque")}}></button> 

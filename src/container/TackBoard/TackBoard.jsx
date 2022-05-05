@@ -4,15 +4,15 @@ import { Notes } from '../../container';
 
 import './TackBoard.css';
 
-const TackBoard = ({ notes, setNotes }) => {
+const TackBoard = ({ notes, setNotes, toggleNoteColor, setToggleNoteColor }) => {
 
 
 
     return (
         <div className="app__tackBoard ">
             <div className="app__notes-container">
-                {notes.map((note, index) => (
-                    <Notes key={note.id} id={note.id} text={note.text} date={note.date} color={note.color} setNotes={setNotes}/> 
+                {notes.map((note) => (
+                    <Notes key={note.id} componentId={note.id} text={note.text} date={note.date} color={note.color} setNotes={setNotes} notes={notes} toggleNoteColor={toggleNoteColor} setToggleNoteColor={setToggleNoteColor} /> 
                 ))}
             </div>
         </div>
