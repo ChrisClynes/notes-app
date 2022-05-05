@@ -7,11 +7,10 @@ import './App.css';
 
 const App = () => {
     const [sidebarExpand, setSidebarExpand] = useState(false);
-    const [toggleNoteColor, setToggleNoteColor] = useState(false);
     const [notes, setNotes] = useState([{
         id: nanoid(),
         title: "",
-        text: "add a new note...",
+        text: "",
         date: "",
         color: "#FFF"
     }]);
@@ -20,8 +19,8 @@ const App = () => {
     <div className="app__page"> 
         <Header />
         <div className="app__main app__bg">
-            <Sidebar notes={notes} setNotes={setNotes} sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand}/>
-            <TackBoard notes={notes} setNotes={setNotes} sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} toggleNoteColor={setToggleNoteColor} setToggleNoteColor={setToggleNoteColor}/>
+            <Sidebar notes={notes} setNotes={setNotes} sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} />
+            <TackBoard notes={notes} setNotes={setNotes} sidebarExpand={sidebarExpand} setSidebarExpand={setSidebarExpand} />
         </div>
         <Footer />
     </div>

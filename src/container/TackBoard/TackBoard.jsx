@@ -12,7 +12,7 @@ const TackBoard = ({ notes, setNotes, toggleNoteColor, setToggleNoteColor }) => 
         <div className="app__tackBoard ">
             <div className="app__notes-container">
                 {notes.map((note) => (
-                    <Notes key={note.id} componentId={note.id} text={note.text} date={note.date} color={note.color} setNotes={setNotes} notes={notes} toggleNoteColor={toggleNoteColor} setToggleNoteColor={setToggleNoteColor} /> 
+                    <Notes key={note.id} componentId={note.id} title={note.title} text={note.text} date={note.date} color={note.color} setNotes={setNotes} notes={notes} /> 
                 ))}
             </div>
         </div>

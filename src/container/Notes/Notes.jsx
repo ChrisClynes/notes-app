@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MdOutlineDeleteOutline, MdColorLens } from 'react-icons/md';
 import { nanoid } from 'nanoid';
 
 import './Notes.css';
 
-const Notes = ({ setToggleNoteColor, toggleNoteColor, setNotes, notes, text, date, color, componentId }) => {
-    const handleUpdateNote = () => {
-        // const newNote = {
-        //         id: ,
-        //         title: "title",
-        //         text: "add a new note...",
-        //         date: new Date().toLocaleString(),
-        //         color: color
-        //         }
-        console.log("change made")
-        // setNotes(newData);
+const Notes = ({ setNotes, notes, title, text, date, color, componentId }) => {
+
+    const [toggleNoteColor, setToggleNoteColor] = useState(false);
+
+    const handleUpdateNote = (modifier, value, id) => {
+        const newNotesArr = notes.map((note) => {
+            const newNote = {
+                id: id,
+                title: modifier === "title" ? value : note.title,
+                text: modifier === "text" ? value : note.text,
+                date: new Date().toLocaleString(),
+                color: modifier === "color" ? value : note.color
+                }
+            if(note.id === id) {
+                return newNote
+            }else {
+                return note;
+            }
+        })
+        setNotes(newNotesArr);
     }
     const handleNoteColortoggle = () => {
         setToggleNoteColor(toggle => !toggle);
-        console.log(toggleNoteColor)
+        
     }
 
     const handleDeleteNote = (idToRemove) => {
@@ -27,29 +36,40 @@ const Notes = ({ setToggleNoteColor, toggleNoteColor, setNotes, notes, text, dat
         setNotes(currentData);
     }
 
-    const changeColorHandler = () => {
-        //push color to objects id color
-    }
-
     return (
         <div className="app__note" style={{backgroundColor: `${color}`}}>
              {toggleNoteColor && (
                 <div className="app__note_color-picker">
-                        <button type="button" className="noteColors noteColor1" onClick={() => {changeColorHandler("bisque")}}></button> 
-                        <button type="button" className="noteColors noteColor2" onClick={() => {changeColorHandler("rgb(255, 255, 255)")}}></button> 
-                        <button type="button" className="noteColors noteColor3" onClick={() => {changeColorHandler("rgb(187, 255, 174)")}}></button> 
-                        <button type="button" className="noteColors noteColor4" onClick={() => {changeColorHandler("rgb(171, 126, 255)")}}></button> 
-                        <button type="button" className="noteColors noteColor5" onClick={() => {changeColorHandler("rgb(255, 132, 116)")}}></button> 
+                        <button type="button" className="noteColors noteColor1" onClick={() => {
+                                handleUpdateNote("color", "bisque", componentId)
+                                handleNoteColortoggle(componentId)
+                            }}></button> 
+                        <button type="button" className="noteColors noteColor2" onClick={() => {
+                                handleUpdateNote("color", "rgb(255, 255, 255)", componentId)
+                                handleNoteColortoggle(componentId)
+                            }}></button> 
+                        <button type="button" className="noteColors noteColor3" onClick={() => {
+                                handleUpdateNote("color", "rgb(187, 255, 174)", componentId)
+                                handleNoteColortoggle(componentId)
+                            }}></button> 
+                        <button type="button" className="noteColors noteColor4" onClick={() => {
+                                handleUpdateNote("color", "rgb(171, 126, 255)", componentId)
+                                handleNoteColortoggle(componentId)
+                            }}></button> 
+                        <button type="button" className="noteColors noteColor5" onClick={() => {
+                                handleUpdateNote("color", "rgb(255, 132, 116)", componentId)
+                                handleNoteColortoggle(componentId)
+                            }}></button> 
                 </div>
             )}
             <div className="app__note-header">
-                <input type="text" className="app__note-title" placeholder='add a title'/>
+                <input type="text" className="app__note-title" value={title} placeholder='add a title' onChange={(e) => handleUpdateNote("title", e.target.value, componentId)}/>
                 <div className="app__note-buttons">
                     <MdColorLens size={24} onClick={() => {handleNoteColortoggle(componentId)}}/>
                     <MdOutlineDeleteOutline size={24} onClick={() => {handleDeleteNote(componentId)}}/>
                 </div>
             </div>
-            <textarea type="text" className="app__note-content notes-scrollbar" placeholder={text} onChange={(e) => handleUpdateNote(e.target.value)} />
+            <textarea type="text" className="app__note-content notes-scrollbar" value={text} placeholder="add a new note..." onChange={(e) => handleUpdateNote("text", e.target.value, componentId)} />
             <div className="app__note-timestamp">
                 {date}
             </div>

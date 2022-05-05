@@ -46,11 +46,26 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes, title}) => 
             {sidebarExpand && (
                 <div className="app__color_picker-wrapper"> 
                     <div className="app__color_picker">
-                        <button type="button" className="colors color1" onClick={() => {createNoteHandler("bisque")}}></button> 
-                        <button type="button" className="colors color2" onClick={() => {createNoteHandler("rgb(255, 255, 255)")}}></button> 
-                        <button type="button" className="colors color3" onClick={() => {createNoteHandler("rgb(187, 255, 174)")}}></button> 
-                        <button type="button" className="colors color4" onClick={() => {createNoteHandler("rgb(171, 126, 255)")}}></button> 
-                        <button type="button" className="colors color5" onClick={() => {createNoteHandler("rgb(255, 132, 116)")}}></button> 
+                        <button type="button" className="colors color1" onClick={() => {
+                                    createNoteHandler("bisque")
+                                    noteBtnHandler()
+                                }}></button> 
+                        <button type="button" className="colors color2" onClick={() => {
+                                    createNoteHandler("rgb(255, 255, 255)")
+                                    noteBtnHandler()
+                                }}></button> 
+                        <button type="button" className="colors color3" onClick={() => {
+                                    createNoteHandler("rgb(187, 255, 174)")
+                                    noteBtnHandler()
+                                }}></button> 
+                        <button type="button" className="colors color4" onClick={() => {
+                                    createNoteHandler("rgb(171, 126, 255)")
+                                    noteBtnHandler()
+                                }}></button> 
+                        <button type="button" className="colors color5" onClick={() => {
+                                    createNoteHandler("rgb(255, 132, 116)")
+                                    noteBtnHandler()
+                                }}></button> 
                     </div>
                 </div>
             )}
