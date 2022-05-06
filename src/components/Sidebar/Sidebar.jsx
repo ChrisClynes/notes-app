@@ -14,7 +14,7 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes, title}) => 
         const newNote = {
                 id: nanoid(),
                 title: "",
-                text: "add a new note...",
+                text: "",
                 date: new Date().toLocaleString(),
                 color: color
                 }

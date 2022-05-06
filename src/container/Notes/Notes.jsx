@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MdOutlineDeleteOutline, MdColorLens } from 'react-icons/md';
-import { nanoid } from 'nanoid';
+
 
 import './Notes.css';
 
@@ -63,7 +63,7 @@ const Notes = ({ setNotes, notes, title, text, date, color, componentId }) => {
                 </div>
             )}
             <div className="app__note-header">
-                <input type="text" className="app__note-title" value={title} placeholder='add a title' onChange={(e) => handleUpdateNote("title", e.target.value, componentId)}/>
+                <input type="text" className="app__note-title" value={title} placeholder="add a title" onChange={(e) => handleUpdateNote("title", e.target.value, componentId)}/>
                 <div className="app__note-buttons">
                     <MdColorLens size={24} onClick={() => {handleNoteColortoggle(componentId)}}/>
                     <MdOutlineDeleteOutline size={24} onClick={() => {handleDeleteNote(componentId)}}/>
