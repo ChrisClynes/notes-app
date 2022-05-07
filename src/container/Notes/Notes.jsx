@@ -37,7 +37,7 @@ const Notes = ({ setNotes, notes, title, text, date, color, componentId }) => {
     }
 
     return (
-        <div className="app__note" style={{backgroundColor: `${color}`}}>
+        <div className="app__note" id={componentId} style={{backgroundColor: `${color}`}}>
              {toggleNoteColor && (
                 <div className="app__note_color-picker">
                         <button type="button" className="noteColors noteColor1" onClick={() => {

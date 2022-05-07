@@ -5,7 +5,7 @@ import { HiMinusCircle, HiPlusCircle } from 'react-icons/hi';
 
 import './Sidebar.css';
 
-const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes, title}) => {
+const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes }) => {
 
     const noteBtnHandler = () => {
         setSidebarExpand(toggle => !toggle);
@@ -19,8 +19,8 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes, title}) => 
                 color: color
                 }
         const newData = [...notes, newNote];
-        setNotes(newData);
-        //anchor to id to snap to new note
+        setNotes(newData) 
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); 
     }
 
     return (
