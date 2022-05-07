@@ -11,6 +11,7 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes }) => {
         setSidebarExpand(toggle => !toggle);
     }
     const createNoteHandler = (color) => {
+        const container = document.getElementById("notes-container");
         const newNote = {
                 id: nanoid(),
                 title: "",
@@ -19,8 +20,8 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes }) => {
                 color: color
                 }
         const newData = [...notes, newNote];
-        setNotes(newData) 
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); 
+        setNotes(newData);
+        setTimeout(() => container.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"}), 100)  
     }
 
     return (
