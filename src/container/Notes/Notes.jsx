@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { MdOutlineDeleteOutline, MdColorLens } from 'react-icons/md';
+import { CgExpand } from 'react-icons/cg';
 
 
 import './Notes.css';
 
-const Notes = ({ setNotes, notes, title, text, date, color, componentId }) => {
+const Notes = ({ setNotes, notes, title, text, date, color, size, componentId }) => {
 
     const [toggleNoteColor, setToggleNoteColor] = useState(false);
+    const [noteSize, setNoteSize ] = useState("note-small app__note");
 
     const handleUpdateNote = (modifier, value, id) => {
         const newNotesArr = notes.map((note) => {
@@ -15,7 +17,8 @@ const Notes = ({ setNotes, notes, title, text, date, color, componentId }) => {
                 title: modifier === "title" ? value : note.title,
                 text: modifier === "text" ? value : note.text,
                 date: new Date().toLocaleString(),
-                color: modifier === "color" ? value : note.color
+                color: modifier === "color" ? value : note.color,
+                size: modifier === "size" ? `${value} app__note` : note.size,
                 }
             if(note.id === id) {
                 return newNote
@@ -25,6 +28,7 @@ const Notes = ({ setNotes, notes, title, text, date, color, componentId }) => {
         })
         setNotes(newNotesArr);
     }
+
     const handleNoteColortoggle = () => {
         setToggleNoteColor(toggle => !toggle);
         
@@ -36,8 +40,26 @@ const Notes = ({ setNotes, notes, title, text, date, color, componentId }) => {
         setNotes(currentData);
     }
 
+    const handleSizeToggle = (currentSize, id) => {
+        const el = document.querySelector(`#${id}`)
+        const sm = /note-small/;
+        const md = /note-medium/;
+        const lg = /note-large/;
+        
+            if(currentSize.match(sm) == "note-small"){
+                el.classList.remove("note-small");
+                handleUpdateNote("size", "note-medium", id);
+            }else if(currentSize.match(md) == "note-medium"){
+                el.classList.remove("note-medium");
+                handleUpdateNote("size", "note-large", id);
+            }else if(currentSize.match(lg) == "note-large"){
+                el.classList.remove("note-large");
+                handleUpdateNote("size", "note-small", id);
+            }     
+    }
+
     return (
-        <div className="app__note" id={componentId} style={{backgroundColor: `${color}`}}>
+        <div className={size} id={componentId} style={{backgroundColor: `${color}`}}>
              {toggleNoteColor && (
                 <div className="app__note_color-picker">
                         <button type="button" className="noteColors noteColor1" onClick={() => {
@@ -70,9 +92,12 @@ const Notes = ({ setNotes, notes, title, text, date, color, componentId }) => {
                 </div>
             </div>
             <textarea type="text" className="app__note-content notes-scrollbar" value={text} placeholder="add a new note..." onChange={(e) => handleUpdateNote("text", e.target.value, componentId)} />
-            <div className="app__note-timestamp">
-                {date}
+            <div className="app__note-footer">
+                <div className="app__note-timestamp">
+                    {date}
+                </div>
             </div>
+            <CgExpand className="app__note-sizing-btn" onClick={() => handleSizeToggle(size, componentId)} />
         </div>
     )
 }

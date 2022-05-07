@@ -3,9 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    min-width: 300px;
-    height: 400px;
     border-radius: 10px;
     box-shadow: 6px 6px 20px rgb(36, 36, 36);
     background-color: bisque;
@@ -72,10 +69,11 @@
 }
 
 .app__note-buttons {
-    width: 18%;
-    padding-top: 4px;
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
     cursor: pointer;
-    
 }
 
 .app__note-content {
@@ -97,6 +95,39 @@
     height: 2rem;
     text-align: center;
 }
+
+
+.app__note-sizing-btn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    transform: rotate(90deg);
+    color: rgba(59, 59, 59, 0.849);
+    cursor: pointer;
+}
+
+.note-small {
+    width: 300px;
+    min-width: 300px;
+    height: 400px;
+}
+
+.note-medium {
+    width: 480px;
+    min-width: 480px;
+    height: 640px;
+}
+
+.note-large {
+    width: 694px;
+    min-width: 694px;
+    height: 900px;
+}
+
+
+
 
 
 /*----------------colors----------------------*/
@@ -152,6 +183,14 @@
         border-radius: 10px;
     }
 
+/*----------------Media Queries----------------------*/
+    @media screen and (max-width:950px) {
+        .note-large {
+            width: 480px;
+            min-width: 480px;
+            height: 640px;
+        }
+    }
 
     @media screen and (max-width:650px) {
         .app__note {
@@ -163,7 +202,6 @@
             min-width: 240px;
             height: 375px;
             margin: 2rem 0;
-            
         }
 
         .app__note_color-picker{
@@ -172,6 +210,7 @@
             top: -30px;
             left: 18px;
         }
+
         .noteColors {
             margin: 0.5rem 0.5rem;
             cursor: pointer;
@@ -197,16 +236,25 @@
         }
 
         .app__note-title {
-            width: 570%;
-        }
-
-        .app__note-buttons {
-            width: 10%;
-            padding-top: 4px;
-            
+            width: 57%;
         }
 
         .app__note-title {
             font-size: 1.25rem;
+        }
+
+        .note-med, .note-large {
+            width: 240px;
+            height: 375px;
+        }
+
+        .app__note-sizing-btn {
+            display: none;
+        }
+
+        .note-large, .note-medium {
+            max-width: 300px;
+            max-width: 300px;
+            max-height: 400px;
         }
     }

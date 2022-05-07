@@ -12,7 +12,8 @@ const App = () => {
         title: "",
         text: "",
         date: "",
-        color: "#FFF"
+        color: "#FFF",
+        size: "note-small app__note",
     }]);
 
     return (

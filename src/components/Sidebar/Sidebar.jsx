@@ -17,11 +17,12 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes }) => {
                 title: "",
                 text: "",
                 date: new Date().toLocaleString(),
-                color: color
+                color: color,
+                size: "note-small app__note",
                 }
         const newData = [...notes, newNote];
         setNotes(newData);
-        setTimeout(() => container.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"}), 100)  
+        setTimeout(() => container.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"}), 100);
     }
 
     return (
