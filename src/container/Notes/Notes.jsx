@@ -41,11 +41,11 @@ const Notes = ({ setNotes, notes, title, text, date, color, size, componentId })
     }
 
     const handleSizeToggle = (currentSize, id) => {
-        const el = document.querySelector(`#${id}`)
+        const el = document.querySelector(`#id${id}`)
         const sm = /note-small/;
         const md = /note-medium/;
         const lg = /note-large/;
-        
+
             if(currentSize.match(sm) == "note-small"){
                 el.classList.remove("note-small");
                 handleUpdateNote("size", "note-medium", id);
@@ -59,7 +59,7 @@ const Notes = ({ setNotes, notes, title, text, date, color, size, componentId })
     }
 
     return (
-        <div className={size} id={componentId} style={{backgroundColor: `${color}`}}>
+        <div className={size} id={`id${componentId}`} style={{backgroundColor: `${color}`}}>
              {toggleNoteColor && (
                 <div className="app__note_color-picker">
                         <button type="button" className="noteColors noteColor1" onClick={() => {
