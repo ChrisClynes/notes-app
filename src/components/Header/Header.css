@@ -45,7 +45,13 @@
 
 }
 
-.spyglass-search-icon {
+.clear-search-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+}
+
+.spyglass-search-icon, .clear-search-icon {
     font-size: 28px;
 }
 
@@ -70,7 +76,7 @@
 @media screen and (max-width:650px) {
     .app__searchbar {
         width: 50%;
-        top: 85px; 
+        top: 80px; 
         left: 50%;
         transform: translateX(-50%);
     }
@@ -81,10 +87,27 @@
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
     .app__title {
         font-family: 'Baloo 2', cursive;
         font-size: 3.5rem;
         font-weight: 600;
     }
+
+    .app__searchbar {
+        width: 50%;
+        top: 75px; 
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .search-input {
+        height: 1rem;
+        font-size: 16px;
+    }
+
+    .spyglass-search-icon, .clear-search-icon {
+        font-size: 18px;
+    }
+    
 }
