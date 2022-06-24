@@ -4,6 +4,7 @@
     +add, delete, modify notes
     +change note colors
     +search notes
+    +local storage saved data
 
 !["Desktop"](https://github.com/ChrisClynes/notes-app/blob/master/markdown/images/homepage_img.PNG?raw=true "home-desktop")
 !["Mobile view"](https://github.com/ChrisClynes/notes-app/blob/master/markdown/images/mobile2_img.PNG?raw=true "mobile1")
