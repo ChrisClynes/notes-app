@@ -51,7 +51,7 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes }) => {
                 <div className="app__color_picker-wrapper"> 
                     <div className="app__color_picker">
                         {noteColors.map((color, i) => (
-                             <button type="button" className={`colors color${i+1}`} onClick={() => {
+                             <button key={i+1} type="button" className="colors" style={{backgroundColor: color}} onClick={() => {
                                 createNoteHandler(color)
                                 noteBtnHandler()
                             }}></button> 

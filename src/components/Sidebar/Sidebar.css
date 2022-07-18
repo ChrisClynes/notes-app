@@ -63,24 +63,6 @@
     transform-origin:bottom
 }
 
-.color1 { 
-    background-color: bisque;
-}
-
-.color2 {
-    background-color: rgb(255, 255, 255);
-}
-
-.color3 {
-    background-color: rgb(187, 255, 174);
-}
-.color4 {
-    background-color: rgb(171, 126, 255);
-}
-
-.color5 {
-    background-color: rgb(255, 132, 116);
-}
 
 @media screen and (max-width:650px) {
 

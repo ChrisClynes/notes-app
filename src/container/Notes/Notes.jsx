@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MdOutlineDeleteOutline, MdColorLens } from 'react-icons/md';
-import { CgExpand } from 'react-icons/cg';
+import { CgArrowsExpandLeft } from 'react-icons/cg';
 
 import { noteColors } from '../../App';
 
@@ -64,7 +64,7 @@ const Notes = ({ setNotes, notes, title, text, date, color, size, componentId })
                     <div className="app__note_color-picker">
                         {
                             noteColors.map((color, i) => (
-                                <button key={i} type="button" className={`noteColors noteColor${i+1}`} onClick={() => {
+                                <button key={i+1} type="button" className="noteColors" style={{backgroundColor: color}} onClick={() => {
                                     handleUpdateNote("color", color, componentId)
                                     handleNoteColortoggle(componentId)
                                 }}></button>
@@ -81,8 +81,8 @@ const Notes = ({ setNotes, notes, title, text, date, color, size, componentId })
                     onChange={(e) => handleUpdateNote("title", e.target.value, componentId)}
                 />
                 <div className="app__note-buttons">
-                    <MdColorLens size={24} onClick={() => {handleNoteColortoggle(componentId)}}/>
-                    <MdOutlineDeleteOutline size={24} onClick={() => {handleDeleteNote(componentId)}}/>
+                    <MdColorLens className="app__note-colorbtn" size={24} onClick={() => {handleNoteColortoggle(componentId)}}/>
+                    <MdOutlineDeleteOutline className="app__note-deletebtn" size={24} onClick={() => {handleDeleteNote(componentId)}}/>
                 </div>
             </div>
             <textarea 
@@ -96,7 +96,7 @@ const Notes = ({ setNotes, notes, title, text, date, color, size, componentId })
                     {date}
                 </div>
             </div>
-            <CgExpand className="app__note-sizing-btn" onClick={() => handleSizeToggle(size, componentId)} />
+            <CgArrowsExpandLeft className="app__note-sizingbtn" onClick={() => handleSizeToggle(size, componentId)} />
         </div>
     )
 }

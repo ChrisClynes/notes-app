@@ -10,6 +10,7 @@
     margin: 2rem;
     z-index: 3;
     position: relative;
+    transition: all 0.5s ease-in-out;
 }
 
 .app__note_color-picker{
@@ -74,6 +75,16 @@
     cursor: pointer;
 }
 
+.app__note-colorbtn:hover {
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+} 
+
+.app__note-deletebtn:hover {
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+} 
+
 .app__note-content {
     padding: 0.5rem 0.5rem 2rem 0.5rem;
     margin: 0.5rem 2rem 2rem 2rem;
@@ -90,21 +101,26 @@
 
 .app__note-timestamp {
     width: 100%;
-    height: 2rem;
+    height: 1rem;
     text-align: center;
+    font-size: 0.75rem;
 }
 
 
-.app__note-sizing-btn {
+.app__note-sizingbtn {
     width: 20px;
     height: 20px;
     position: absolute;
-    bottom: 5px;
-    right: 5px;
-    transform: rotate(90deg);
+    bottom: 8px;
+    right: 8px;
     color: rgba(59, 59, 59, 0.849);
     cursor: pointer;
 }
+
+.app__note-sizingbtn:hover {
+    transform: scale(1.2);
+    transition: all 0.15s ease-in-out;
+} 
 
 .note-small {
     width: 300px;
@@ -141,25 +157,6 @@
 .noteColors:hover {
     transform: scale(1.3);
     transform-origin:bottom
-}
-
-.noteColor1 {
-    background-color: bisque;
-}
-
-.noteColor2 {
-    background-color: rgb(255, 255, 255);
-}
-
-.noteColor3 {
-    background-color: rgb(187, 255, 174);
-}
-.noteColor4 {
-    background-color: rgb(171, 126, 255);
-}
-
-.noteColor5 {
-    background-color: rgb(255, 132, 116);
 }
 
 
