@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 
 import './App.css';
 
-export const noteColors = ["bisque", "rgb(255, 255, 255)", "rgb(187, 255, 174)", "rgb(171, 126, 255)", "rgb(255, 132, 116)"];
+export const noteColors = ["#FEFFFF", "#2DDFFF", "#F5F474", "#E33CC7", "#FFAA47", "#F54D28"];
 
 const App = () => {
     const [sidebarExpand, setSidebarExpand] = useState(false);

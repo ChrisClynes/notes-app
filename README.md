@@ -6,9 +6,9 @@
 + search notes
 + local storage saved data
 
-!["Desktop"](https://github.com/ChrisClynes/notes-app/blob/master/markdown/images/homepage_img.PNG?raw=true "home-desktop")
-!["Mobile view"](https://github.com/ChrisClynes/notes-app/blob/master/markdown/images/mobile2_img.PNG?raw=true "mobile1")
-!["Mobile view 2"](https://github.com/ChrisClynes/notes-app/blob/master/markdown/images/mobile_img.PNG?raw=true "miobile2")
+!["Desktop"](https://github.com/ChrisClynes/notes-app/blob/master/markdown/images/notes01.JPG?raw=true "home-desktop")
+!["Mobile view"](https://github.com/ChrisClynes/notes-app/blob/master/markdown/images/notes02?raw=true "mobile1")
+!["Mobile view 2"](https://github.com/ChrisClynes/notes-app/blob/master/markdown/images/notes03.PNG?raw=true "miobile2")
 
 ## Dependencies
     @testing-library/jest-dom: ^5.16.4

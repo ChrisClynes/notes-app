@@ -9,13 +9,13 @@
 }
 
 .app__sidebar {
-    min-width: 60px;
-    height: 300px;
+    min-width: 50px;
+    height: 280px;
     display: flex;
     float: left;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, rgb(139, 139, 139) , rgb(172, 172, 172));
+    background-image: linear-gradient(to right, rgb(173, 173, 173) , rgb(231, 231, 231));
     border-right: 3px solid rgba(12, 12, 12, 0.938);
     border-top: 3px solid rgba(12, 12, 12, 0.938);
     border-bottom: 3px solid rgba(12, 12, 12, 0.938);
@@ -25,7 +25,7 @@
 }
 
 .app__sider_buttons  {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     margin-right: 0.5rem;
     padding: 0;
     cursor: pointer;
@@ -36,12 +36,16 @@
     height: 45px;
     border-radius: 100%;
     border: 3px solid black;
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px rgb(36, 36, 36);
+}
+.app__add_button:active, .app__minus_button:active {
+    transform: scale(1.0);
+    box-shadow: none;
 }
 
 .app__add_button:hover, .app__minus_button:hover  {
-    transform: scale(1.1);
-    transition: all 0.15s ease-in-out;
-    box-shadow: 3px 3px 15px rgb(36, 36, 36);
+    transition: all 0.15s ease-in-out;  
 }
 
 .app__color_picker-wrapper {
@@ -120,14 +124,15 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        bottom: -200px;
-        left: 4px;
+        bottom: -220px;
+        left: 0;
     }
 
     .app__add_button, .app__minus_button {
         width: 50px;
         height: 50px;
         border: none;
+        box-shadow: none;
     }
 
     .app__add_button:hover, .app__minus_button:hover  {
@@ -139,10 +144,11 @@
     .app__color_picker {
         background: none;
         border: none;
+        height: 280px;
     }
 
     .colors {
-        margin: 0.5rem 0.25rem;
+        margin: 0.5rem 0.5rem;
         cursor: pointer;
         height: 30px;
         width: 30px;
