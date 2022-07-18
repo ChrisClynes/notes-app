@@ -2,6 +2,8 @@ import { nanoid } from 'nanoid';
 import React from 'react';
 import { HiMinusCircle, HiPlusCircle } from 'react-icons/hi';
 
+import { noteColors } from '../../App';
+
 
 import './Sidebar.css';
 
@@ -48,26 +50,14 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes }) => {
             {sidebarExpand && (
                 <div className="app__color_picker-wrapper"> 
                     <div className="app__color_picker">
-                        <button type="button" className="colors color1" onClick={() => {
-                                    createNoteHandler("bisque")
-                                    noteBtnHandler()
-                                }}></button> 
-                        <button type="button" className="colors color2" onClick={() => {
-                                    createNoteHandler("rgb(255, 255, 255)")
-                                    noteBtnHandler()
-                                }}></button> 
-                        <button type="button" className="colors color3" onClick={() => {
-                                    createNoteHandler("rgb(187, 255, 174)")
-                                    noteBtnHandler()
-                                }}></button> 
-                        <button type="button" className="colors color4" onClick={() => {
-                                    createNoteHandler("rgb(171, 126, 255)")
-                                    noteBtnHandler()
-                                }}></button> 
-                        <button type="button" className="colors color5" onClick={() => {
-                                    createNoteHandler("rgb(255, 132, 116)")
-                                    noteBtnHandler()
-                                }}></button> 
+                        {noteColors.map((color, i) => (
+                             <button type="button" className={`colors color${i+1}`} onClick={() => {
+                                createNoteHandler(color)
+                                noteBtnHandler()
+                            }}></button> 
+                        ))
+
+                        }
                     </div>
                 </div>
             )}
