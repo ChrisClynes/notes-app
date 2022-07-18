@@ -4,24 +4,44 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    
+    align-items: center;
+    z-index: 1;
 }
 
 .app__sidebar {
     min-width: 60px;
-    height: 100%;
+    height: 300px;
     display: flex;
     float: left;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, rgba(139, 139, 139, 0.897) , rgba(172, 172, 172, 0.767));
+    background-image: linear-gradient(to right, rgb(139, 139, 139) , rgb(172, 172, 172));
     border-right: 3px solid rgba(12, 12, 12, 0.938);
+    border-top: 3px solid rgba(12, 12, 12, 0.938);
+    border-bottom: 3px solid rgba(12, 12, 12, 0.938);
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 6px 6px 20px rgb(36, 36, 36);
 }
 
-.app__add_button, .app__minus_button  {
-    padding-left: 1rem;
-    padding-right: 0.5rem;
+.app__sider_buttons  {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    padding: 0;
     cursor: pointer;
+}
+
+.app__add_button, .app__minus_button {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    border: 3px solid black;
+}
+
+.app__add_button:hover, .app__minus_button:hover  {
+    transform: scale(1.1);
+    transition: all 0.15s ease-in-out;
+    box-shadow: 3px 3px 15px rgb(36, 36, 36);
 }
 
 .app__color_picker-wrapper {
@@ -31,6 +51,8 @@
     align-items: center;
     justify-content: center;
     align-items: center;
+    z-index: -1;
+    transition: 0.15s;
 }
 
 .app__color_picker {
@@ -63,14 +85,13 @@
     transform-origin:bottom
 }
 
-
 @media screen and (max-width:650px) {
 
     .app__sidebar_wrapper {
         position: absolute;
         width: 60px;
-        height: 60px;
-        top: 20px;
+        height: 120px;
+        top: 0px;
         left: 10px;
         display: flex;
         align-items: center;
@@ -80,7 +101,8 @@
         }
 
     .app__sidebar {
-        min-width: none;
+        width: 0px;
+        height: 0px;
         background: none;
         border: none;
         display: flex;
@@ -98,9 +120,20 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        bottom: -10px;
-        left: 3px;
-        transform: translateY(100%);
+        bottom: -200px;
+        left: 4px;
+    }
+
+    .app__add_button, .app__minus_button {
+        width: 50px;
+        height: 50px;
+        border: none;
+    }
+
+    .app__add_button:hover, .app__minus_button:hover  {
+        transform: scale(1.1);
+        transition: all 0.15s ease-in-out;
+        box-shadow: none;
     }
 
     .app__color_picker {

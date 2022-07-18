@@ -31,24 +31,24 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes }) => {
         <div className="app__sidebar_wrapper">
             <div className="app__sidebar">
             {!sidebarExpand && (
-                <div className="app__add_button">
-                    <HiPlusCircle size={48} onClick={(e) => {
+                <div className="app__sider_buttons">
+                    <HiPlusCircle className="app__add_button" size={48} onClick={(e) => {
                         e.stopPropagation() 
                         noteBtnHandler()
                         }}/>
                 </div>
             )}
             {sidebarExpand && (
-                <div className="app__minus_button">
-                    <HiMinusCircle size={48} onClick={(e) => {
+                <div className="app__sider_buttons">
+                    <HiMinusCircle className="app__minus_button" size={48} onClick={(e) => {
                         e.stopPropagation() 
                         noteBtnHandler()}
                         }/>
                 </div>
             )}
             </div>
-            {sidebarExpand && (
-                <div className="app__color_picker-wrapper"> 
+           
+                <div className="app__color_picker-wrapper" style={sidebarExpand ? {transform: "translateX(0px)"} : {transform: "translateX(-100px)"}}> 
                     <div className="app__color_picker">
                         {noteColors.map((color, i) => (
                              <button key={i+1} type="button" className="colors" style={{backgroundColor: color}} onClick={() => {
@@ -60,7 +60,7 @@ const Sidebar = ({ sidebarExpand, setSidebarExpand, notes, setNotes }) => {
                         }
                     </div>
                 </div>
-            )}
+          
             </div>
     )
 }
